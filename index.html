@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Регистрация на сайте по продаже запчастей</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+<body class="has-background-light">
+<script>
+    const onUserTypeClick = (type) => {
+        if (type === 'buyer') {
+            document.getElementById('site').style.display = 'none'
+        } else if (type === 'seller') {
+            document.getElementById('site').style.display = 'flex'
+        }
+    }
+
+    const openModal = () => {
+        document.getElementById('modal').classList.add('is-active')
+    }
+
+    const closeModal = () => {
+        document.getElementById('modal').classList.remove('is-active')
+        return false
+    }
+</script>
+<section class="section">
+    <form action="">
+        <div class="field">
+            <label class="label mb-5">Регистрация</label>
+            <div class="ml-6 is-flex-direction-column">
+                <label class="label ml-5">Вы регистрируетесь как</label>
+                <div class="control mb-6 ml-5">
+                    <div>
+                        <label class="radio">
+                            <input type="radio" name="answer" onclick="onUserTypeClick('buyer')" checked="checked">
+                            <strong>Покупатель</strong>
+                        </label>
+                    </div>
+                    <div>
+                        <label class="radio">
+                            <input type="radio" name="answer" onclick="onUserTypeClick('seller')">
+                            <strong>Поставщик</strong>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="field is-horizontal">
+            <div class="field-label is-normal">
+                <label class="label has-text-weight-normal">Эл. почта</label>
+            </div>
+            <div class="field-body">
+                <div class="field">
+                    <label>
+                        <input class="input" type="email" style="width: 500px">
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="label ml-4">Название организации</div>
+
+        <div class="field is-horizontal">
+            <div class="field-label is-normal">
+                <label class="label has-text-weight-normal">ИП или Юр.лицо</label>
+            </div>
+            <div class="field-body">
+                <div class="field">
+                    <label>
+                        <input class="input" type="text" style="width: 500px">
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="field is-horizontal">
+            <div class="field-label is-normal">
+                <label class="label has-text-weight-normal">ИНН</label>
+            </div>
+            <div class="field-body">
+                <div class="field">
+                    <label>
+                        <input class="input" type="text" style="width: 500px">
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="label ml-4">Фактический адрес</div>
+
+        <div class="field is-horizontal">
+            <div class="field-label is-normal">
+                <label class="label has-text-weight-normal">Ваш город</label>
+            </div>
+            <div class="field-body">
+                <div class="field">
+                    <label>
+                        <input class="input" type="text" style="width: 500px">
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="field is-horizontal">
+            <div class="field-label is-normal">
+                <label class="label has-text-weight-normal">Улица</label>
+            </div>
+            <div class="field-body">
+                <div class="field is-horizontal">
+                    <div class="field-body">
+                        <div class="field">
+                            <label>
+                                <input class="input" type="text">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label has-text-weight-normal" style="width: 100px">Дом/стр.</label>
+                    </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <label>
+                                <input class="input" type="text">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label has-text-weight-normal" style="width: 100px">Офис</label>
+                    </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <label>
+                                <input class="input" type="text" style="width: 70px">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="field is-horizontal">
+            <div class="field-label is-normal">Телефон</div>
+            <div class="field-body">
+                <div class="field is-expanded">
+                    <div class="field has-addons" style="width: 500px">
+                        <p class="control">
+                            <a class="button is-static">
+                                +7
+                            </a>
+                        </p>
+                        <p class="control is-expanded">
+                            <label>
+                                <input class="input" type="tel">
+                            </label>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="site" class="field is-horizontal" style="display: none">
+            <div class="field-label is-normal">
+                <label class="label has-text-weight-normal">Сайт вашей компании</label>
+            </div>
+            <div class="field-body">
+                <div class="field">
+                    <label>
+                        <input class="input" type="text" style="width: 500px">
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="label ml-4">Виды деятельности</div>
+
+        <div class="field is-horizontal">
+            <div class="field-label is-normal">
+                <label class="label has-text-weight-normal">Магазин</label>
+            </div>
+            <div class="field-body">
+                <div class="field mt-2">
+                    <label class="checkbox">
+                        <input type="checkbox">
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="field is-horizontal">
+            <div class="field-label is-normal">
+                <label class="label has-text-weight-normal">Региональная сеть магазинов</label>
+            </div>
+            <div class="field-body">
+                <div class="field mt-2">
+                    <label class="checkbox">
+                        <input type="checkbox">
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="field is-horizontal">
+            <div class="field-label is-normal">
+                <label class="label has-text-weight-normal">Федеральная сеть магазинов</label>
+            </div>
+            <div class="field-body">
+                <div class="field mt-2">
+                    <label class="checkbox">
+                        <input type="checkbox">
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="field is-horizontal">
+            <div class="field-label is-normal">
+                <label class="label has-text-weight-normal">Интернет-магазин</label>
+            </div>
+            <div class="field-body">
+                <div class="field mt-2">
+                    <label class="checkbox">
+                        <input type="checkbox">
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="field is-horizontal">
+            <div class="field-label is-normal">
+                <label class="label has-text-weight-normal">Автосервис</label>
+            </div>
+            <div class="field-body">
+                <div class="field mt-2">
+                    <label class="checkbox">
+                        <input type="checkbox">
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="field is-horizontal">
+            <div class="field-label is-normal">
+                <label class="label has-text-weight-normal">Другое</label>
+            </div>
+            <div class="field-body">
+                <div class="field">
+                    <label>
+                        <input class="input" type="text" style="width: 500px">
+                    </label>
+                </div>
+            </div>
+        </div>
+    </form>
+    <button class="button is-link mt-6" style="width: 250px" onclick="openModal()">Отправить заявку</button>
+</section>
+<div id="modal" class="modal">
+    <div class="modal-background"></div>
+
+    <div class="modal-content">
+        <div class="box">
+            <p>Форма успешно отправлена!</p>
+            <button class="button is-success mt-4" onclick="closeModal()">Закрыть окно</button>
+        </div>
+    </div>
+
+    <button class="modal-close is-large" aria-label="close" onclick="closeModal()"></button>
+</div>
+</body>
+</html>
